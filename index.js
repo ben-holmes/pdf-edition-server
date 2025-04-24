@@ -7,24 +7,17 @@ const cors = require('cors');
 app.use(cors());
 app.use(express.static('downloads'));
 
-const counterPath = path.join(__dirname, 'counter.txt');
+let count = 0;
 
-// Make sure the counter file exists
-if (!fs.existsSync(counterPath)) {
-  fs.writeFileSync(counterPath, '0');
-}
-
-// Get current counter value
 function getCounter() {
-  return parseInt(fs.readFileSync(counterPath, 'utf8'), 10);
-}
-
-// Increment and save new counter value
-function incrementCounter() {
-  const count = getCounter() + 1;
-  fs.writeFileSync(counterPath, count.toString());
   return count;
 }
+
+function incrementCounter() {
+  count += 1;
+  return count;
+}
+
 
 app.get('/download', (req, res) => {
   const count = incrementCounter();
