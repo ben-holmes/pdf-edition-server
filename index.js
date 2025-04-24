@@ -22,7 +22,7 @@ function incrementCounter() {
 app.get('/download', (req, res) => {
   const count = incrementCounter();
   const edition = String(count).padStart(3, '0');
-  const originalFile = path.join(__dirname, 'originals', 'KarenEliot_BenjaminHolmes.pdf');
+  const originalFile = path.join(__dirname, 'public', 'KarenEliot_BenjaminHolmes.pdf');
   const renamedFile = path.join(__dirname, 'downloads', `KarenEliot_BenjaminHolmes_${edition}.pdf`);
 
   fs.copyFile(originalFile, renamedFile, (err) => {
