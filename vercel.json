@@ -1,11 +1,11 @@
 {
   "version": 2,
   "functions": {
-    "index.js": {
+    "api/index.js": {
       "includeFiles": "public/KarenEliot_BenjaminHolmes.pdf"
     }
   },
   "routes": [
-    { "src": "/download", "dest": "/index.js" }
+    { "src": "/download", "dest": "/api/index.js" }
   ]
 }
