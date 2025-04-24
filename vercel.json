@@ -4,7 +4,7 @@
   "routes": [{ "src": "/download", "dest": "/index.js" }],
   "functions": {
     "index.js": {
-      "includeFiles": ["public/KarenEliot_BenjaminHolmes.pdf"]
+      "includeFiles": "public/KarenEliot_BenjaminHolmes.pdf"
     }
   }
 }
